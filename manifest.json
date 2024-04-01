@@ -3,24 +3,46 @@
   "name": "Ad Accelerator",
   "version": "0.0.0.5",
   "description": "Detects if a video ad is playing, mutes the video and dramatically increases speed.",
-  "permissions": [ "scripting"],
-  "host_permissions": ["*://*.youtube.com/*","*://www.hulu.com/watch/*"],
-  "background": {
-  },
+  "permissions": [
+    "scripting"
+  ],
+  "host_permissions": [
+    "*://*.youtube.com/*",
+    "*://www.hulu.com/watch/*",
+    "*://www.twitch.tv/*"
+  ],
+  "background": {},
   "content_scripts": [
     {
-        "matches": ["*://*.youtube.com/*"],
-        "js": ["content_youtube.js"],
-        "run_at": "document_end",
-        "all_frames":true
+      "matches": [
+        "*://*.youtube.com/*"
+      ],
+      "js": [
+        "content_youtube.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
     },
-        {
-        "matches": ["*://www.hulu.com/watch/*"],
-        "js": ["content_hulu.js"],
-        "run_at": "document_end",
-        "all_frames":true
+    {
+      "matches": [
+        "*://www.hulu.com/watch/*"
+      ],
+      "js": [
+        "content_hulu.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
+    },
+    {
+      "matches": [
+        "*://www.twitch.tv/*"
+      ],
+      "js": [
+        "content_twitch.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": true
     }
-
   ],
   "icons": {
     "16": "assets/images/icon16.png",
