@@ -1,10 +1,10 @@
 (function () {
   // Checks for ads and manipulates the video or uses skip button if present
   function handleVideoAd() {
-    const video = document.querySelector("video");
+    const videoElement = document.querySelector("video");
     const adElement = document.querySelector(".video-ads.ytp-ad-module");
 
-    if (video && adElement && adElement.children.length > 0) {
+    if (videoElement && adElement && adElement.children.length > 0) {
       videoElement.muted = true;
       videoElement.playbackRate = 16.0;
     } else {
@@ -20,11 +20,6 @@
     if (skipButton) {
       skipButton.click();
     }
-  }
-
-  function muteAndSpeedUp(videoElement, playbackRate) {
-    videoElement.muted = true;
-    videoElement.playbackRate = playbackRate;
   }
 
   function initializeAdHandling() {
