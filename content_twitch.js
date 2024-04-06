@@ -4,13 +4,12 @@
     const video = document.querySelector("video");
     const adElement = document.querySelector("div[aria-label='Ad']");
     if (video && adElement && adElement.children.length > 0) {
-      muteAndSpeedUp(video, 16.0);
+      videoElement.muted = true;
+      videoElement.playbackRate = 16.0;
+    } else {
+      videoElement.muted = false;
+      videoElement.playbackRate = 1.0;
     }
-  }
-
-  function muteAndSpeedUp(videoElement, playbackRate) {
-    videoElement.muted = true;
-    videoElement.playbackRate = playbackRate;
   }
 
   function initializeAdHandling() {
